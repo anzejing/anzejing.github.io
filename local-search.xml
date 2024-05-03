@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Vue初步学习</title>
+    <link href="/posts/52419/"/>
+    <url>/posts/52419/</url>
+    
+    <content type="html"><![CDATA[<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>创建项目：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm create vue@latest<br></code></pre></td></tr></table></figure><p>安装依赖并启动服务：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install<br>npm run dev<br></code></pre></td></tr></table></figure><p>项目打包：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm run build<br></code></pre></td></tr></table></figure><h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><ul><li><p><code>package.json</code>：该文件包含项目的依赖项列表，以及一些元数据和 <code>eslint</code> 配置。</p></li><li><p><code>yarn.lock</code>：如果你选择 <code>yarn</code> 作为你的包管理器，将生成此文件，其中包含项目所需的所有依赖项和子依赖项的列表。</p></li><li><p><code>babel.config.js</code>：这个是 <a href="https://babeljs.io/">Babel</a> 的配置文件，可以在开发中使用 JavaScript 的新特性，并且将其转换为在生产环境中可以跨浏览器运行的旧语法代码。你也可以在这个里配置额外的 babel 插件。</p></li><li><p><code>jsconfig.json</code>：这是一份用于 <a href="https://code.visualstudio.com/docs/languages/jsconfig">Visual Studio Code</a> 的配置文件，它为 VS Code 提供了关于项目结构的上下文信息，并帮助自动完成。</p></li><li><p><code>public</code>：这个目录包含一些在Webpack编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）。</p><ul><li><code>favicon.ico</code>：这个是项目的图标，当前就是一个 Vue 的 logo。</li></ul></li><li><p><code>index.html</code>：首页入口</p></li><li><p><code>src</code>：这个是 Vue 应用的核心代码目录</p><ul><li><code>main.js</code>：这是应用的入口文件。目前它会初始化 Vue 应用并且制定将应用挂载到 <code>index.html</code> 文件中的哪个 HTML 元素上。通常还会做一些注册全局组件或者添额外的 Vue 库的操作。</li><li><code>App.vue</code>：这是 Vue 应用的根节点组件。可以直接写组件而不用components</li><li><code>components</code>：这是用来存放自定义组件的目录。</li><li><code>assets</code>：这个目录用来存放像 CSS、图片这种静态资源，但是因为它们属于代码目录下，所以可以用 webpack 来操作和处理。意思就是你可以使用一些预处理比如 <a href="https://sass-lang.com/">Sass&#x2F;SCSS</a> 或者 <a href="https://stylus-lang.com/">Stylus</a>。</li></ul></li><li><p><code>static</code>： 静态资源目录</p></li><li><p><code>dist</code>： 使用<code>npm run bulid </code>打包后生成的。</p></li></ul><hr><p>参考资料：</p><ol><li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started">开始使用 Vue</a></li><li><a href="https://www.runoob.com/vue3/vue3-tutorial.html">Vue3 教程 | 菜鸟教程</a></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>Vue</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>Vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JavaScript</title>
     <link href="/posts/18006/"/>
     <url>/posts/18006/</url>

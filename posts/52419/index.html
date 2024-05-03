@@ -16,21 +16,23 @@
   <meta name="author" content="anzejing">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安则静的个人博客">
+    <meta name="description" content="初步学习了解Vue。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像推理">
-<meta property="og:url" content="https://anzejing.github.io/posts/62451/index.html">
+<meta property="og:title" content="Vue初步学习">
+<meta property="og:url" content="https://anzejing.github.io/posts/52419/index.html">
 <meta property="og:site_name" content="anzejing">
-<meta property="og:description" content="安则静的个人博客">
+<meta property="og:description" content="初步学习了解Vue。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-03T09:59:04.000Z">
-<meta property="article:modified_time" content="2024-05-03T14:46:26.922Z">
+<meta property="article:published_time" content="2024-05-03T14:48:01.000Z">
+<meta property="article:modified_time" content="2024-05-03T16:36:20.814Z">
 <meta property="article:author" content="anzejing">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>图像推理 - anzejing</title>
+  <title>Vue初步学习 - anzejing</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="图像推理"></span>
+            <span id="subtitle" data-typed-text="Vue初步学习"></span>
           
         </div>
 
@@ -236,8 +238,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-03 17:59" pubdate>
-          2024年5月3日 下午
+        <time datetime="2024-05-03 22:48" pubdate>
+          2024年5月3日 晚上
         </time>
       </span>
     
@@ -248,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          481 字
         
       </span>
     
@@ -259,7 +261,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -304,12 +306,56 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">图像推理</h1>
+            <h1 id="seo-header">Vue初步学习</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>创建项目：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm create vue@latest<br></code></pre></td></tr></table></figure>
+
+<p>安装依赖并启动服务：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install<br>npm run dev<br></code></pre></td></tr></table></figure>
+
+<p>项目打包：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm run build<br></code></pre></td></tr></table></figure>
+
+<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><ul>
+<li><p><code>package.json</code>：该文件包含项目的依赖项列表，以及一些元数据和 <code>eslint</code> 配置。</p>
+</li>
+<li><p><code>yarn.lock</code>：如果你选择 <code>yarn</code> 作为你的包管理器，将生成此文件，其中包含项目所需的所有依赖项和子依赖项的列表。</p>
+</li>
+<li><p><code>babel.config.js</code>：这个是 <a target="_blank" rel="noopener" href="https://babeljs.io/">Babel</a> 的配置文件，可以在开发中使用 JavaScript 的新特性，并且将其转换为在生产环境中可以跨浏览器运行的旧语法代码。你也可以在这个里配置额外的 babel 插件。</p>
+</li>
+<li><p><code>jsconfig.json</code>：这是一份用于 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/languages/jsconfig">Visual Studio Code</a> 的配置文件，它为 VS Code 提供了关于项目结构的上下文信息，并帮助自动完成。</p>
+</li>
+<li><p><code>public</code>：这个目录包含一些在Webpack编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）。</p>
+<ul>
+<li><code>favicon.ico</code>：这个是项目的图标，当前就是一个 Vue 的 logo。</li>
+</ul>
+</li>
+<li><p><code>index.html</code>：首页入口</p>
+</li>
+<li><p><code>src</code>：这个是 Vue 应用的核心代码目录</p>
+<ul>
+<li><code>main.js</code>：这是应用的入口文件。目前它会初始化 Vue 应用并且制定将应用挂载到 <code>index.html</code> 文件中的哪个 HTML 元素上。通常还会做一些注册全局组件或者添额外的 Vue 库的操作。</li>
+<li><code>App.vue</code>：这是 Vue 应用的根节点组件。可以直接写组件而不用components</li>
+<li><code>components</code>：这是用来存放自定义组件的目录。</li>
+<li><code>assets</code>：这个目录用来存放像 CSS、图片这种静态资源，但是因为它们属于代码目录下，所以可以用 webpack 来操作和处理。意思就是你可以使用一些预处理比如 <a target="_blank" rel="noopener" href="https://sass-lang.com/">Sass&#x2F;SCSS</a> 或者 <a target="_blank" rel="noopener" href="https://stylus-lang.com/">Stylus</a>。</li>
+</ul>
+</li>
+<li><p><code>static</code>： 静态资源目录</p>
+</li>
+<li><p><code>dist</code>： 使用<code>npm run bulid </code>打包后生成的。</p>
+</li>
+</ul>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started">开始使用 Vue</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/vue3/vue3-tutorial.html">Vue3 教程 | 菜鸟教程</a></li>
+</ol>
+
                 
               </div>
             
@@ -317,6 +363,43 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" class="category-chain-item">Vue</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/Vue/" class="print-no-link">#Vue</a>
+      
+    </div>
   
 </div>
 
@@ -326,8 +409,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>图像推理</div>
-      <div>https://anzejing.github.io/posts/62451/</div>
+      <div>Vue初步学习</div>
+      <div>https://anzejing.github.io/posts/52419/</div>
     </div>
     <div class="license-meta">
       
@@ -371,18 +454,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/32813/" title="类比推理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">类比推理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/9220/" title="论证推理">
-                        <span class="hidden-mobile">论证推理</span>
+                      <a href="/posts/18006/" title="JavaScript">
+                        <span class="hidden-mobile">JavaScript</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
